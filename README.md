@@ -5,14 +5,16 @@ Syncs your dice rolls from D&D Beyond to Foundry.
 ## How to Use This Scaffold
 
 1. **Copy the scaffold**
-   
+
    **Windows (PowerShell):**
+
    ```powershell
    Copy-Item -Path "foundry-module-scaffold" -Destination "your-new-module-name" -Recurse
    cd your-new-module-name
    ```
-   
+
    **Mac/Linux (bash):**
+
    ```bash
    cp -r foundry-module-scaffold your-new-module-name
    cd your-new-module-name
@@ -91,18 +93,20 @@ If you prefer manual control or need to test locally:
 1. **Make your changes** in the module files
 2. **Test locally** by enabling the module in Foundry VTT
 3. **Package for release**:
-   
+
    **Windows (PowerShell):**
+
    ```powershell
    powershell -ExecutionPolicy Bypass -File package-release.ps1
    ```
-   
+
    **Mac/Linux (bash):**
+
    ```bash
    chmod +x package-release.sh  # Only needed once
    ./package-release.sh
    ```
-   
+
 4. **Create GitHub release** manually and upload files from `release/` directory
 5. **Share** the manifest URL with users
 
@@ -115,9 +119,11 @@ If you prefer manual control or need to test locally:
 ## Key Files
 
 ### module.json
+
 The module manifest - tells Foundry what files to load and basic metadata.
 
 **Important fields to update:**
+
 - `id`: Must be unique and match your folder name
 - `title`: Display name shown in Foundry
 - `esmodules`: List of JavaScript files to load
@@ -125,18 +131,23 @@ The module manifest - tells Foundry what files to load and basic metadata.
 - `manifest` and `download`: GitHub release URLs
 
 ### scripts/main.js
+
 Main entry point with Foundry hooks. This is where you:
+
 - Initialize your module (`init` hook)
 - Set up features when ready (`ready` hook)
 - Register event listeners and modify UI
 
 ### scripts/shared.js
+
 Shared utilities and constants. Contains:
+
 - `MODULE_ID`: Your module's identifier (must match module.json)
 - `log()`: Debug logging helper
 - Helper functions used across multiple files
 
 ### scripts/settings.js
+
 Module settings configuration. Register user-configurable options here.
 
 ## Common Hooks
@@ -144,27 +155,27 @@ Module settings configuration. Register user-configurable options here.
 ```javascript
 // Module initialization (before game is ready)
 Hooks.once("init", () => {
-    // Register settings, create classes, etc.
+  // Register settings, create classes, etc.
 });
 
 // Module ready (game is fully loaded)
 Hooks.once("ready", () => {
-    // Initialize features that need game data
+  // Initialize features that need game data
 });
 
 // Combat tracker rendered
 Hooks.on("renderCombatTracker", (app, html, data) => {
-    // Modify combat tracker UI
+  // Modify combat tracker UI
 });
 
 // Actor sheet rendered
 Hooks.on("renderActorSheet", (app, html, data) => {
-    // Add buttons or modify actor sheets
+  // Add buttons or modify actor sheets
 });
 
 // Chat message created
 Hooks.on("createChatMessage", (message, options, userId) => {
-    // Process chat messages
+  // Process chat messages
 });
 ```
 
