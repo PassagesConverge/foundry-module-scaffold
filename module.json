@@ -18,8 +18,14 @@
     "requires": [],
     "recommends": []
   },
-  "esmodules": ["scripts/main.js", "scripts/shared.js", "scripts/settings.js"],
-  "styles": ["styles/styles.css"],
+  "esmodules": [
+    "scripts/main.js",
+    "scripts/shared.js",
+    "scripts/settings.js"
+  ],
+  "styles": [
+    "styles/styles.css"
+  ],
   "license": "MIT",
   "url": "https://github.com/imalane/lanes-ddb-roll-sync",
   "readme": "https://github.com/imalane/lanes-ddb-roll-sync/blob/main/README.md",
