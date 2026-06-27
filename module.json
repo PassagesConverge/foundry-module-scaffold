@@ -1,11 +1,11 @@
 {
-  "id": "lanes-ddb-roll-sync",
-  "title": "Lane's DDBeyond Roll Sync",
-  "description": "Syncs your dice rolls from D&D Beyond to Foundry",
+  "id": "your-module-id",
+  "title": "Your Module Title",
+  "description": "A brief description of what your module does.",
   "version": "0.1.0",
   "authors": [
     {
-      "name": "imalane",
+      "name": "Your Name",
       "discord": "",
       "flags": {}
     }
@@ -27,8 +27,8 @@
     "styles/styles.css"
   ],
   "license": "MIT",
-  "url": "https://github.com/imalane/lanes-ddb-roll-sync",
-  "readme": "https://github.com/imalane/lanes-ddb-roll-sync/blob/main/README.md",
-  "manifest": "https://github.com/imalane/lanes-ddb-roll-sync/releases/latest/download/module.json",
-  "download": "https://github.com/imalane/lanes-ddb-roll-sync/releases/latest/download/lanes-ddb-roll-sync.zip"
+  "url": "https://github.com/yourusername/your-module-id",
+  "readme": "https://github.com/yourusername/your-module-id/blob/main/README.md",
+  "manifest": "https://github.com/yourusername/your-module-id/releases/latest/download/module.json",
+  "download": "https://github.com/yourusername/your-module-id/releases/latest/download/your-module-id.zip"
 }

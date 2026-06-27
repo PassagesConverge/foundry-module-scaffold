@@ -1,6 +1,6 @@
-# Lane's DDBeyond Roll Sync
+# Foundry VTT Module Scaffold
 
-Syncs your dice rolls from D&D Beyond to Foundry.
+A template/scaffold for creating Foundry VTT modules. Copy this structure to start a new module project.
 
 ## How to Use This Scaffold
 
