@@ -33,6 +33,10 @@ RELEASE_DIR="release"
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 MODULE_JSON="$SCRIPT_DIR/module.json"
 
+info "Building production bundle..."
+cd "$SCRIPT_DIR"
+npm run build
+
 # Check if module.json exists
 if [ ! -f "$MODULE_JSON" ]; then
     error "Error: module.json not found at: $MODULE_JSON"
@@ -85,7 +89,7 @@ TEMP_DIR=$(mktemp -d)
 trap "rm -rf $TEMP_DIR" EXIT
 
 # Files and folders to include
-INCLUDE_ITEMS=("module.json" "README.md" "LICENSE" "scripts" "styles")
+INCLUDE_ITEMS=("module.json" "README.md" "LICENSE" "dist" "styles")
 
 # Copy files to temp directory
 for item in "${INCLUDE_ITEMS[@]}"; do

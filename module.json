@@ -19,9 +19,7 @@
     "recommends": []
   },
   "esmodules": [
-    "scripts/main.js",
-    "scripts/shared.js",
-    "scripts/settings.js"
+    "dist/main.js"
   ],
   "styles": [
     "styles/styles.css"

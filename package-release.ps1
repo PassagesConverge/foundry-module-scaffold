@@ -32,6 +32,12 @@ function Write-Warning { param($Message) Write-Host $Message -ForegroundColor Ye
 function Write-Failure { param($Message) Write-Host $Message -ForegroundColor Red }
 
 try {
+    Write-Info "Building production bundle..."
+    & npm run build
+    if ($LASTEXITCODE -ne 0) {
+        throw "Build failed with exit code $LASTEXITCODE"
+    }
+
     Write-Info "Reading module.json..."
     $moduleJsonPath = Join-Path $PSScriptRoot "module.json"
     if (-not (Test-Path $moduleJsonPath)) {
@@ -80,7 +86,7 @@ try {
         "module.json",
         "README.md",
         "LICENSE",
-        "scripts",
+        "dist",
         "styles"
     )
     

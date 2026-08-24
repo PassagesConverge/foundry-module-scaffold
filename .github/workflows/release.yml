@@ -15,6 +15,18 @@ jobs:
     steps:
     - name: Checkout Repository
       uses: actions/checkout@v4
+
+    - name: Set up Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: 22
+        cache: npm
+
+    - name: Install dependencies
+      run: npm install
+
+    - name: Build production bundle
+      run: npm run build
     
     - name: Extract Version from Tag
       id: get_version
@@ -43,7 +55,7 @@ jobs:
           module.json \
           README.md \
           LICENSE \
-          scripts/ \
+          dist/ \
           styles/ \
           -x "*.git*" "release/*"
         cp module.json release/
